@@ -125,6 +125,43 @@ for(int i : arr){
 
 `java`是通过值传递的，也就是所通过拷贝传递的。
 
-## 消息与方法
+> java并未规定一定要处理返回值，所以可以调用void类型的方法而不处理返回值
 
-对象是类的实例
+>- 类定义对象所知及所为
+>- 方法可依据实例变量来展现不同的行为
+>- 方法可以使用参数，你可以传入一个或者多个值给方法
+>- 传给方法的参数必须符合声明时的数量、循序、和类型
+>- 方法**必须**声明返回类型使用`void`类型代表方法不返回任何东西
+>- 如果返回了非void的返回类型，就一定要返回与声明类型相同的值。
+
+## 封装
+
+封装的目的：保护数据
+
+```java
+// 实例代码
+private int size;
+public int getSize(){
+    return this.size;
+}
+public void setSize(int s){
+    this.size = s;
+}
+```
+
+## 继承
+
+> - 
+
+# java常用类
+
+> - ArrayList是javaAPI的类
+> - 是用add（）来新增ArrayList的元素
+> - 使用remove（）来删除元素
+> - 寻找某项元素的位置，使用indexOf()
+> - isEmpty() 判断是否为空。
+> - size（） 可以获取ArrayList的大小
+> - ArrayList会自动调整大小。
+> - ArrayList<类型>
+> - 类会用包来组织。
+> - 类用于完整的名称，有包的名称和类的名称组成的。
