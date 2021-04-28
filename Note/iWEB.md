@@ -413,8 +413,28 @@ public class HashSetUser {
 
 ### HashMap
 
-
-
 ### TreeMap
 
 ### HashTable
+
+代码看idea
+
+## Collections
+
+**colleaction和collections的区别：面试**
+
+1. Collections是一个类，Collection是一个接口
+2. Colleactions是提供了对Collection的操作，Collection是list和set的父类。
+
+# IO流
+
+流的定义：流指的是数据的流动、数据的传输。
+
+文件系统类：File
+
+流的分类
+
+类的常用类：文件字节流，文件字符流，字符串缓冲流，字节数组流，对象流，打印流
+
+### 1.1 File文件系统类
+
