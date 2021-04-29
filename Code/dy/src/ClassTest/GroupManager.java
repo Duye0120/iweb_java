@@ -1,0 +1,45 @@
+package ClassTest;
+
+import java.util.ArrayList;
+
+public class GroupManager extends User {
+    public GroupManager() {
+
+    }
+
+    public GroupManager(String name, int balance) {
+        super(name, balance);
+    }
+
+    public ArrayList<Integer> send(int totalMoney, int count) {
+        // 首先需要一个集合，用来存储若干红包的金额
+        ArrayList<Integer> redList = new ArrayList<>();
+
+        // 首先看一下群主自己有多少钱
+        int leftMoney = super.getBalance(); // 群主当前余额
+        if (totalMoney > leftMoney) {
+            System.out.println("余额不足");
+            return redList; // 返回空集合
+        }
+
+        // 扣钱，其实就是重新设置余额
+        super.setBalance(leftMoney - totalMoney);
+
+        // 发红包，需要平均拆分成为count份
+        int avg = totalMoney / count;
+        int mod = totalMoney % count; // 余数，也就是甩下的零头
+
+        // 除不开的零头，包在最后一个红包当中
+        // 下面把红包一个一个放到集合当中
+        for (int i = 0; i < count - 1; i++) {
+            redList.add(avg);
+        }
+
+        // 最后一个红包
+        int last = avg + mod;
+        redList.add(last);
+
+        return redList;
+    }
+}
+
