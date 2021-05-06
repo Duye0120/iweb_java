@@ -642,11 +642,43 @@ boolean isDeleted = f.delete();
 
 流的分类
 
+**节点流(读写数据,读写文件的时候,想到节点流)**:从一个特定的数据源读取数据：`FileReader`,`FileWriter`
+
+​	比较底层的流，直接对文件进行操作，但是不够灵活。
+
+**处理流(包装流)**:链接在已存在的流上,为程序提供更为强大的读写功能
+
+​	数据源：存放数据的地方
+
+​	`BufferedReader`类中,有属性Reader
+
+
+
+```java
+// 文件读取拷贝等等套路
+String filePath = "";// 定义一下文件位置
+FileInputStream fileInputStream = null;
+// FileOutPutSteam fileOutPutStream = null;
+try {
+    fileInputStream = new FileIntputStream(filePath);
+    byte[] buf = new byte[想一次读取多少];
+    int readLen = 0;
+    while((readLen = fileInputStream.read(buf)) != -1){
+        System.out.print(new String(buf,0,readLen));
+        // (一次读取多少,从什么地方开始,一次读取多少)
+    }
+}catch(IOException e){
+    e.printStackTrace();
+}finally{
+    // 关闭流
+}
+```
 
 
 
 
-## BufferedReader, 
+
+## BufferedReader
 
 # 多线程
 
