@@ -912,3 +912,68 @@ public class Test {
 2.2 生产者消费者（设计模式）
 
 2.3 定时任务
+
+# Socket(网络编程)（了解）
+
+定义：一组客户端和服务端之间的通信。又叫做套接字。
+
+DNS：域名解析器
+
+http:超文本传输协议 s 加密
+
+浏览器访问默认为80端口
+
+**Socket**支持TCP/UDP
+
+
+
+服务端:提供IP 端口号(决定了服务器的使用哪个应用程序)
+
+客户端:指定IP地址,端口号
+
+
+
+通过Java构建一个服务端:`ServerSocket`
+
+```java
+//指定端口号:,IP地址就是部署那台服务器的IP地址
+ServerSocket server = new ServerSocket(9000);// 构建了服务端实例
+// 监听请求,根据端口号
+Socket scoket = server.accept();// 是Java对客户端的封装
+```
+
+客户端:Socket
+
+
+
+# 反射(了解)
+
+反射机制:Java可以通过反射机制获取类中的属性,方法,构造方法 通过反射执行方法
+
+步骤:
+
+	1. 获取类:Class.forName("类的路径"),对象名.getClass(),类名.class()
+ 	2. 获取类中的属性:getFields() getField("属性名")
+ 	3. 获取类中的方法:getMethods() getMethods("方法名",参数列表)
+ 	4. 获取类中构造函数:getConstructors() getConstructor(参数列表)
+ 	5. 创建对象:newInstance();
+ 	6. 执行方法:invoke(对象,实参)
+
+## **反射机制**
+
+>1. 在运行时判断任意一个对象所属的类
+>2. 在运行时构造任意一个类的对象
+>3. 在运行时得到任意一个类所具有的成员变量和方法
+>4. 在运行时调用任意一个对象的成员变量和方法 
+>5. 生成动态代理
+
+### 反射相关的主要类
+
+`1java.lang.Class`:代表一个类,Class对象表示某个类加载在堆中的对象
+
+`java.lang.reflect.Method`代表类的方法Method对象表示某个类的方法
+
+`java.lang.reflect.Field`代表类的成员变量,Field对象表示某个类的成员变量
+
+`java.lang.reflect.Constructor`代表类的构造方法,Constructor对象表示构造器
+
