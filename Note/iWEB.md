@@ -953,11 +953,11 @@ Socket scoket = server.accept();// 是Java对客户端的封装
 步骤:
 
 	1. 获取类:Class.forName("类的路径"),对象名.getClass(),类名.class()
- 	2. 获取类中的属性:getFields() getField("属性名")
- 	3. 获取类中的方法:getMethods() getMethods("方法名",参数列表)
- 	4. 获取类中构造函数:getConstructors() getConstructor(参数列表)
- 	5. 创建对象:newInstance();
- 	6. 执行方法:invoke(对象,实参)
+	2. 获取类中的属性:getFields() getField("属性名")
+	3. 获取类中的方法:getMethods() getMethods("方法名",参数列表)
+	4. 获取类中构造函数:getConstructors() getConstructor(参数列表)
+	5. 创建对象:newInstance();
+	6. 执行方法:invoke(对象,实参)
 
 ## **反射机制**
 
@@ -976,4 +976,24 @@ Socket scoket = server.accept();// 是Java对客户端的封装
 `java.lang.reflect.Field`代表类的成员变量,Field对象表示某个类的成员变量
 
 `java.lang.reflect.Constructor`代表类的构造方法,Constructor对象表示构造器
+
+## 反射的应用:动态代理
+
+> 代理设计模式原理:使用一个代理将对象包装起来,然后该代理对象取代原始对象.
+>
+> 任何对原始对象的调用都要通过代理.代理对象决定是否以及何时将方法转到原始对象上.
+
+#### 动态代理相比于静态代理的优点
+
+>  抽象角色中(接口)声明的所有方法都被转移到调用处理器一个集中的方法中处理,这样就可以更加灵活和统一的处理众多方法.
+
+最好可以通过一个代理类完成全部的代理功能
+
+# 新特性
+
+## Lambda表达式
+
+```java
+
+```
 
