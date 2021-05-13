@@ -108,6 +108,7 @@ AND sno IN(SELECT sno
 		FROM sc
 		WHERE cno = 'c002');
 -- 7、查询学过“谌燕”老师所教的所有课的同学的学号、姓名；
+use iweb_test
 SELECT 
 	student.sno 学号,
 	student.sname 姓名 
