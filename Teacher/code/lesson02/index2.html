@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>超链接</title>
+</head>
+<body>
+
+	<!-- 点击后会链接到一个新的地址 -->
+	<!-- href:链接的指向地址 -->
+	<!-- 
+	target:链接打开的方式
+	_self:当前窗口
+	_black: 新窗口打开
+	_parent: 父级窗口, 因为 frame 框架这个标签基本弃用了,这个属性基本不用
+	_top:顶顶窗口打开 不用
+	 -->
+	<p>
+		<a href="https://www.baidu.com" target="_self">跳转</a>
+		<a href="https://www.baidu.com" target="_black">跳转</a>
+	</p>
+
+	<!-- 超链接的另一种用法： 锚点 , href 指向锚点-->
+	<a href="#bottom">跳转到锚点</a>
+	<script type="text/javascript">
+		for (var i = 0; i < 100; i++) {
+			document.write("<p>这是一个段落</p>");
+		}
+	</script>
+	<!-- 用id 和name 都行 -->
+	<a name="bottom">
+		<img src="./imgs/01.jpg">
+	</a>
+	<script type="text/javascript">
+		for (var i = 0; i < 100; i++) {
+			document.write("<p>这是一个段落</p>");
+		}
+	</script>
+</body>
+</html>

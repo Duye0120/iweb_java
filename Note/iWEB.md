@@ -989,11 +989,28 @@ Socket scoket = server.accept();// 是Java对客户端的封装
 
 最好可以通过一个代理类完成全部的代理功能
 
-# 新特性
+# JDBC
 
-## Lambda表达式
+## statement
 
-```java
+1. 用来执行静态SQL语句并返回其生成结果的对象
+2. 连接建立以后，需要对数据库进行访问，执行SQL语句，可以通过
+   - `statement[SQL注入]`
+   - `PreparedStatemen[预处理]`
+   - `CallableStatement[存储过程]`
+3. `Statement`对象执行SQL语句，存在SQL注入风险
+4. SQL注入：利用某些系统没有对用户输入的数据进行充分的检查，而在用户输入数据中注入非法的SQL语句段或命令，恶意攻击数据库
+5. 要防范SQL注入，主要用PreparedStatement取代Statement就可以了
 
-```
+如何解决
+
+使用`PreparedStatement`
+
+## 事务
+
+1. JDBC程序中当一个Connection对象创建时，默认情况下时自动提交事务：每次执行一个SQL语句时，如果执行成功，就会向数据库自动提交，而不能回滚。
+2. JDBC程序中为了让多个SQL语句作为一个整体执行，需要使用事务
+3. 调用Connection的`setAutoCommit（false）`可以取消自动提交事务
+4. 在所有SQL语句都成功执行以后，调用`commit（）`：方法提交事务
+5. 操作失败出现异常时，调用`rollback（）`：方法回滚事务
 

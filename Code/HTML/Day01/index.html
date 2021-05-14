@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      .border {
+        width: 296px;
+        height: 490px;
+        background-color: #f5f5f5;
+        margin: 100px auto;
+      }
+      .main {
+        padding: 15px 17px 10px;
+        height: 452px;
+        width: 260px;
+      }
+      .top {
+        width: 260px;
+        height: 20px;
+      }
+      .title-left {
+        font-size: 16px;
+        color: #333;
+        font-weight: 700;
+        width: auto;
+        height: 20px;
+        line-height: 20px;
+      }
+      .title-right {
+        font-size: 12px;
+        color: #999;
+        float: right;
+        line-height: 20px;
+      }
+      .line {
+        height: 10px;
+        width: 260px;
+        border-bottom: 1.5px solid #999;
+      }
+      .another {
+        width: 260px;
+        height: 32px;
+        border-bottom: 1px dotted #999;
+        line-height: 32px;
+        font-size: 16px;
+        display: inline-block;
+      }
+      .rank {
+        width: 16px;
+        height: 16px;
+        font-size: 14px;
+        line-height: 16px;
+        float: left;
+        margin-top: 8px;
+        margin-right: 9px;
+        text-align: center;
+      }
+      .two {
+        background-color: #fc7403;
+        color: white;
+      }
+      .three {
+        background-color: #f8cc1c;
+        color: white;
+      }
+      .box_title {
+        max-width: 100px;
+        float: left;
+        font-size: 14px;
+      }
+      .book-author {
+        font-size: 12px;
+        width: auto;
+        width: 70px;
+        height: 32px;
+        float: right;
+        color: #999;
+      }
+      .one {
+        height: 100px;
+        width: 260px;
+      }
+      .r1 {
+        background-color: #d32f2f;
+        color: white;
+        margin-top: 0;
+      }
+      .NO1 {
+        margin: 16px 0 15px;
+        height: 88px;
+      }
+      .titlemain {
+        position: absolute;
+      }
+      .nov-pic {
+        width: 67px;
+        height: 88px;
+        border-radius: 4px;
+        float: right;
+      }
+      .No1title {
+        position: absolute;
+        width: auto;
+        width: 34px;
+        height: 16px;
+        font-size: 16px;
+        line-height: 16px;
+        top: 1px;
+        right: 199px;
+        bottom: 87px;
+        left: 27px;
+      }
+      .No1author {
+        position: absolute;
+        width: 65px;
+        height: 12px;
+        top: 27px;
+        right: 168px;
+        bottom: 65px;
+        left: 27px;
+        font-size: 12px;
+        color: #999;
+      }
+      .No1type {
+        position: absolute;
+        font-size: 12px;
+        color: #999;
+        width: 72px;
+        left: 27px;
+        top: 47px;
+      }
+      .No1num {
+        position: absolute;
+        font-size: 13px;
+        color: #333;
+        width: 72px;
+        left: 27px;
+        top: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">
+      <div class="main">
+        <div class="top">
+          <a href="" class="title-left">24小时畅销榜</a>
+          <a href="" class="title-right">更多></a>
+        </div>
+        <div class="line"></div>
+        <div class="one">
+          <div class="NO1">
+            <div class="rank r1">1</div>
+            <div class="titlemain">
+              <a class="No1title">剑来</a>
+              <a class="No1author">烽火戏诸侯</a>
+              <a class="No1type">[武侠仙侠]</a>
+              <a class="No1num">832.7万字</a>
+            </div>
+            <img
+              src="http://static.zongheng.com/upload/cover/2017/05/1496234539057.JPG"
+              alt=""
+              class="nov-pic"
+            />
+          </div>
+        </div>
+        <div class="another">
+          <div class="rank two">2</div>
+          <div class="box_title">一剑独尊</div>
+          <div class="book-author">青鸾峰上</div>
+        </div>
+        <div class="another">
+          <div class="rank three">3</div>
+          <div class="box_title">逆天邪神</div>
+          <div class="book-author">火星引力</div>
+        </div>
+        <div class="another">
+          <div class="rank">4</div>
+          <div class="box_title">雪中悍刀行</div>
+          <div class="book-author">烽火戏诸侯</div>
+        </div>
+        <div class="another">
+          <div class="rank">5</div>
+          <div class="box_title">剑仙在此</div>
+          <div class="book-author">乱世狂刀</div>
+        </div>
+        <div class="another">
+          <div class="rank">6</div>
+          <div class="box_title">不让江山</div>
+          <div class="book-author">知白</div>
+        </div>
+        <div class="another">
+          <div class="rank">7</div>
+          <div class="box_title">陆地键仙</div>
+          <div class="book-author">六如和尚</div>
+        </div>
+        <div class="another">
+          <div class="rank">8</div>
+          <div class="box_title">剑道第一仙</div>
+          <div class="book-author">萧瑾瑜</div>
+        </div>
+        <div class="another">
+          <div class="rank">9</div>
+          <div class="box_title">赘婿出山</div>
+          <div class="book-author">李闲鱼</div>
+        </div>
+        <div class="another">
+          <div class="rank">10</div>
+          <div class="box_title">神国之上</div>
+          <div class="book-author">见异思剑</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

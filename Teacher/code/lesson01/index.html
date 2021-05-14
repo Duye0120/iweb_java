@@ -1,0 +1,40 @@
+<!DOCTYPE html>  <!-- 文档声明部分：表示当前的文档是一个html文档 -->
+<html> <!-- 文档的开始部分 -->
+
+<!-- 文档的头部 -->
+<head>
+	<!-- 标签： 双标签，有标签的开始和标签的闭合 -->
+	<title>这是第一个网页</title>
+	<!-- 标签：单标签 只有标签的开始没有标签的闭合 -->
+	<!-- 属性部分： charset="utf-8"   属性名：charset  属性值：utf-8 -->
+	<meta charset="utf-8">
+	<style type="text/css">
+		#title{
+			color: green;
+		}
+	</style>
+
+</head>
+<!-- 文档的内部分 -->
+<body>
+	<!-- id=??? 相当于给这个标签起了一个名字 -->
+	<h1 id="title">这是一个大标题</h1>
+	<button id="btn" >改变标题颜色</button> <br>
+	<!-- src: 资源路径 -->
+	<img src="./imgs/01.jpg">
+
+	<!-- 注意书写顺序 -->
+	<script type="text/javascript">
+		// 1. 获取按钮对象
+		var btn = document.getElementById('btn');
+
+		console.log(btn);
+
+		// 2. 在按钮对象上面添加点击事件
+		btn.onclick=function() {
+			// 3. 修改字体颜色
+			document.getElementById("title").style.color = 'red';
+		}
+	</script>
+</body>
+</html> <!-- 文档的结束部分 -->

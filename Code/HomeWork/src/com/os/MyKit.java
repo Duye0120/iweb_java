@@ -34,7 +34,7 @@ public class MyKit {
     public void insetIn(String s, String employeeName, String employeeType) {
         Connection conn = null;
         try {
-//                插入到数据库
+            //插入到数据库
             conn = util.getConnection();
             String sql = "insert into  employee values(?,?,?,?)";
             PreparedStatement pst = conn.prepareStatement(sql);
