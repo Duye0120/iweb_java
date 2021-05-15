@@ -381,3 +381,101 @@ maven由于他的约定大于配置，我们之后可能遇到我们写的配置
 
 ## 5.12 idea操作
 
+# 6. Servlet
+
+## 6.1 servlet简介
+
+- Servlet是sun公司开发动态web的一门技术
+- Sun在这些API中提供了一个接口叫做：Servlet，如果你想开发一个Servlet程序，只需要完成两个步骤
+  - 编写一个类，实现Servlet接口
+  - 把开发好的Java类部署到Web服务器中
+
+**把实现了Servlet接口的Java程序叫做，Servlet**
+
+## 6.2 HelloServlet
+
+servlet接口sun公司有两个默认的实现类：HttpServlet,GenericServlet
+
+
+
+1. 构建一个Maven项目，删掉里面的src目录，以后我们的学习就在这个项目里面建立，这个空的工程就是maven主工程
+
+2. 关于Maven父子工程的理解:
+
+   ```xml
+   <modules>
+   	<module>servlet-01</module>
+   </modules>
+   ```
+
+   子项目会有
+
+   ```xml
+   <parent>
+   	<artifactId>javaweb-02-servlet</artifactId>
+       <groupId>com.duye</groupId>
+       <version>1.0-SNAPSHOT</version>
+   </parent>
+   ```
+
+   父项目中的java子项目可以直接使用
+
+   ```java
+   son extends father
+   ```
+
+3. Maven环境优化
+
+   1. 修改web.xml为最新的
+   2. 将maven的结构搭建完整
+
+4. 编写一个Servelet程序
+
+   1. 编写一个普通类
+
+   2. 实现Servlet接口，这里我们直接继承HttpServlet
+
+   3. ```java
+      public class HelloServlet extends HttpServlet {
+      
+          // 由于get或者post只是请求实现的不同方式，可以互相调用，业务逻辑都一样
+          @Override
+          protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+              PrintWriter writer = resp.getWriter();// 响应流
+              writer.println("hello,Servlet");
+      //        ServletOutputStream outputStream = resp.getOutputStream();
+          }
+      
+          @Override
+          protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+              doGet(req, resp);
+          }
+      }
+      ```
+
+5. 编写Servlet的映射
+
+   为什么需要映射：我们写的是java程序，但是要通过浏览器访问，而浏览器访问需要链接web服务器，所以我们需要再web服务中注册我们写的Servlet，还需要给他一个浏览器能够访问的路径
+
+   ```xml
+   <!--  注册Servlet-->
+     <servlet>
+       <servlet-name>hello</servlet-name>
+       <servlet-class>com.duye.servlet.HelloServlet</servlet-class>
+     </servlet>
+   <!--  Servlet的请求路径-->
+     <servlet-mapping>
+       <servlet-name>hello</servlet-name>
+       <url-pattern>/hello</url-pattern>
+     </servlet-mapping>
+   ```
+
+6. 配置Tomcat
+
+   ​	注意：配置项目发布的路径就可以了
+
+## 6.3 Servlet原理
+
+Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，会：
+
+ 
