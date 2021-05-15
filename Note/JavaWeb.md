@@ -275,3 +275,109 @@ Maven会规定好你该如何去编写我们的Java代码，必须按照这个�
 - `M2_HOME`:maven目录下的bin目录
 - `MAVEN_HOME`：Maven目录
 - 在系统的path中配置%MAVEN_HOME%\bin
+
+## 5.4 阿里云镜像
+
+- 镜像：mirrors
+  - 作用：加速我们的下载
+
+```xml
+<mirror>
+    <id>nexus-aliyun</id>
+    <mirrorOf>*,!jeecg,!jeecg-snapshots</mirrorOf>
+    <name>Nexus aliyun</name>
+    <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+</mirror>
+```
+
+## 5.5 本地仓库
+
+在本地的仓库，远程仓库；
+
+- 建立一个本地仓库
+
+```xml
+<localRepository>E:\Java\apache-maven-3.6.1\maven-repo</localRepository>
+```
+
+## 5.6 在IDEA中使用Maven
+
+1. 启动idea
+2. 创建一个Maven项目
+
+![image-20210515101705770](JavaWeb.assets/image-20210515101705770.png)
+
+![image-20210515101809098](JavaWeb.assets/image-20210515101809098.png)
+
+![image-20210515102203985](JavaWeb.assets/image-20210515102203985.png)
+
+4. 观察Maven仓库
+
+5. IDEA中的Maven设置
+
+   idea项目创建成功后，看一眼Maven配置事项
+
+![image-20210515103855527](JavaWeb.assets/image-20210515103855527.png)
+
+6. 到这里Maven在idea中的配置和使用就OK了
+
+## 5.7 创建一个普通的Maven项目
+
+## 5.8 标记文件夹功能
+
+![image-20210515105453976](JavaWeb.assets/image-20210515105453976.png)
+
+## 5.9 在idea中配置Tomcat
+
+![image-20210515110014277](JavaWeb.assets/image-20210515110014277.png)
+
+![image-20210515110101667](JavaWeb.assets/image-20210515110101667.png)
+
+![image-20210515110430585](JavaWeb.assets/image-20210515110430585.png)
+
+![image-20210515110514361](JavaWeb.assets/image-20210515110514361.png)
+
+解决警告问题：
+
+为什么会有这个问题：我们访问一个网站，**需要指定一个文件夹名字**
+
+![image-20210515110702950](JavaWeb.assets/image-20210515110702950.png)
+
+启动Tomcat
+
+![image-20210515110842033](JavaWeb.assets/image-20210515110842033.png)
+
+## 5.10 pom文件
+
+pm.xml是Maven的核心配置
+
+![image-20210515111050093](JavaWeb.assets/image-20210515111050093.png)
+
+maven由于他的约定大于配置，我们之后可能遇到我们写的配置文件，无法被导出或者生效的问题，
+
+```xml
+<!--在build中配置resources，来防止我们资源导出失败的问题-->
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
+    </resources>
+</build>
+```
+
+## 5.12 idea操作
+
