@@ -513,3 +513,72 @@ Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，�
 
 4. 优先级问题
    1. 指定了固有的映射路径优先级最高，如果找不到就会走默认的路径
+
+## 6.5 ServletContext
+
+web容器在启动的时候，它会为每个web程序都创建一个对应的ServletContext对象，它代表了当前的web应用；
+
+### 1. 共享数据
+
+我在Servlet中保存的数据，可以在另一个servlet中访问。
+
+```java
+// 放置context部分
+public class HelloServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //this.getInitParameter() 初始化参数
+        //this.getServletConfig();servlet配置
+        //this.getServletContext(); Servlet上下文
+        ServletContext context = this.getServletContext();
+        String UserName = "杜也";// 数据
+        context.setAttribute("UserName",UserName);// 将一个数据保存在ServletContext中，名字为：username,值username
+        System.out.println("hello");
+    }
+}
+```
+
+```java
+// 读取context
+public class getServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = this.getServletContext();
+        String username = (String) context.getAttribute("UserName");
+
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("utf-8");
+        resp.getWriter().println("名字 ：" + username);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+}
+```
+
+配置web.xml
+
+```xml
+<servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.duye.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getc</servlet-name>
+        <servlet-class>com.duye.servlet.getServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getc</servlet-name>
+        <url-pattern>/getc</url-pattern>
+    </servlet-mapping>
+```
+
+### 2.
+
