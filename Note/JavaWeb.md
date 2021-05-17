@@ -478,4 +478,38 @@ servlet接口sun公司有两个默认的实现类：HttpServlet,GenericServlet
 
 Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，会：
 
- 
+## 6.4 Mapping问题
+
+1. 一个servlet可以指定通用映射路径
+
+```xml
+<servlet-mapping>
+	<servlet-name>hello</servlet-name>
+    <url-pattern>/hello/*</url-pattern>
+</servlet-mapping>
+```
+
+2. 默认请求路径
+
+```xml
+<servlet-mapping>
+	<servlet-name>hello</servlet-name>
+    <url-pattern>/*</url-pattern>
+</servlet-mapping>
+```
+
+3. 可以自定义后缀实现请求映射
+
+   - *前面不能加映射路径
+
+   ```xml
+   <servlet-mapping>
+   	<servlet-name>hello</servlet-name>
+       <url-pattern>*.hello</url-pattern>
+   </servlet-mapping>
+   ```
+
+   
+
+4. 优先级问题
+   1. 指定了固有的映射路径优先级最高，如果找不到就会走默认的路径
