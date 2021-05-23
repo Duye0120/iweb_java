@@ -516,6 +516,28 @@ Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，�
 
 ## 6.5 ServletContext
 
+### 什么是ServletContext
+
+1. ServletContext是一个接口，它表示Servlet上下文对象
+
+2. 一个web工程，只有一个ServletContext对象实例。
+
+3. ServletContext是一个域对象
+
+   1. 什么是域对象
+
+      可以像Map一样，存取数据的对象，叫域对象
+
+      这里的域指的是存取数据的操作范围
+
+**ServletContext类的四个作用**
+
+1. 获取web.xml中配置的上下文参数context-param
+
+2. 获取当前工程路径，格式：/工程路径
+3. 获取共亨部署后在服务器硬盘上的绝对路径
+4. 向Map一样存储数据
+
 web容器在启动的时候，它会为每个web程序都创建一个对应的ServletContext对象，它代表了当前的web应用；
 
 ### 1. 共享数据
@@ -546,8 +568,9 @@ public class getServlet extends HttpServlet {
         ServletContext context = this.getServletContext();
         String username = (String) context.getAttribute("UserName");
 
-        resp.setContentType("text/html");
-        resp.setCharacterEncoding("utf-8");
+        // 它会同时设置服务器和客户端都使用utf-8字符集，还设置了响应头
+        // 此方法一定要在获取流对象之前调用
+        resp.setContentType("text/html;utf-8");
         resp.getWriter().println("名字 ：" + username);
     }
 
@@ -580,5 +603,87 @@ public class getServlet extends HttpServlet {
     </servlet-mapping>
 ```
 
-### 2.
+### 2.获取初始化参数
 
+```xml
+配置xml
+<context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/test</param-value>
+</context-param>
+```
+
+```java
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext context = this.getServletContext();
+    String url = context.getInitParameter("url");
+    resp.getWriter().println(url);
+}
+```
+
+### 3. 请求转发
+
+```java
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext context = this.getServletContext();
+    System.out.println("进入了servlet");
+    //context.getRequestDispatcher("/gp");// 转发请求路路径
+    // forward(req,resp);// 调用forward实现请求转发
+    context.getRequestDispatcher("/gp").forward(req,resp);
+}
+```
+
+### 4. 读取资源文件
+
+`Properties`
+
+- 在Java目录下新建Properties
+- 在resources目录下新建properties
+
+发现：都被打包到了同一个路径下：classes，我们俗称这个路径为class path
+
+```properties
+username=root
+password=root
+```
+
+
+
+```java
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
+    Properties properties = new Properties();
+    properties.load(is);
+    String username = properties.getProperty("username");
+    String password = properties.getProperty("password");
+    resp.getWriter().println(username + " " + password);
+}
+```
+
+访问测试即可。
+
+## 6.5 HttpServletResponse
+
+web服务器接收到客户端的http请求，针对这个请求，分别创建一个代表请求的HttpServletRequest对象，代表响应的一个HttpServletResponse;
+
+- 如果要获取客户端请求过来的参数：找HTTP ServletResquest
+- 如果要给客户端响应一些信息：找HTTP Servlet Response
+
+### **请求重定向**
+
+请求重定向:是指客户端给服务器发请求，然后服务器告诉客户端说，我给你发地址，然后你去新地址访问。叫请求重定向（原地址有可能废弃）
+
+## 6.6 HttpServletRequest
+
+**常见应用**
+
+1. 向浏览器输出信息
+2. 下载文件
+   1. 获取下载文件的路径
+   2. 下载的文件名是啥
+   3. 设置想办法让浏览器能够支持下载我们需要的东西
+   4. 获取下载文件的输入流
+   5. 创建缓冲流
+   6. 获取Output Stream对象
+   7. 将FileOutputStream流写入到缓冲区（buffer）
+   8. 使用OutputSteam将缓冲区的数据输出到客户端

@@ -13,6 +13,8 @@ public class getServlet extends HttpServlet {
         ServletContext context = this.getServletContext();
         String username = (String) context.getAttribute("UserName");
 
+        // 它会同时设置服务器和客户端都使用utf-8字符集，还设置了响应头
+        // 此方法一定要在获取流对象之前调用
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
         resp.getWriter().println("名字 ：" + username);
