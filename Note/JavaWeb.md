@@ -383,6 +383,26 @@ maven由于他的约定大于配置，我们之后可能遇到我们写的配置
 
 # 6. Servlet
 
+[JavaWeb-Servlet](https://blog.csdn.net/qq_19782019/article/details/80292110?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162181462016780264047085%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162181462016780264047085&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-80292110.first_rank_v2_pc_rank_v29&utm_term=servlet&spm=1018.2226.3001.4187)
+
+**servlet的工作模式**
+
+- 客户端发送请求至服务器
+- 服务器启动并调用servlet，Servlet根据客户端请求生成响应内容并将其传送给服务器
+- 服务器将响应返回客户端。 
+
+**servlet API概览**
+
+Servlet API 包含以下4个Java包：
+
+1. javax.servlet   其中包含定义servlet和servlet容器之间契约的类和接口。
+
+2. javax.servlet.http   其中包含定义HTTP Servlet 和Servlet容器之间的关系。
+
+3. javax.servlet.annotation   其中包含标注servlet，Filter,Listener的标注。它还为被标注元件定义元数据。
+
+4. javax.servlet.descriptor，其中包含提供程序化登录Web应用程序的配置信息的类型。
+
 ## 6.1 servlet简介
 
 - Servlet是sun公司开发动态web的一门技术
@@ -687,3 +707,127 @@ web服务器接收到客户端的http请求，针对这个请求，分别创建�
    6. 获取Output Stream对象
    7. 将FileOutputStream流写入到缓冲区（buffer）
    8. 使用OutputSteam将缓冲区的数据输出到客户端
+
+
+
+# 7. JSP
+
+## **什么是servlet？**
+
+jsp就是servlet程序。
+
+## JSP的三种语法
+
+jsp的page指令可以修改jsp页面中的一些重要的属性，或者行为。
+
+```java
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+```
+
+| 名称                          | 功能                                                         |
+| ----------------------------- | ------------------------------------------------------------ |
+| language                      | 表示jsp翻译后是什么语言文件，暂时支持“Java”                  |
+| contentType                   | 表示jsp返回的数据类型是什么，也是源码中`response.setContentType()`参数值 |
+| pageEncoding                  | 表示当前jsp文件本身的字符集                                  |
+| import                        | 跟Java源代码一样，用于导包                                   |
+| 以下两个属性是给out输出流使用 |                                                              |
+| autoFlush                     | 设置当前out输出流缓冲区满了以后，否则自动刷新缓冲级区。默认值为true。 |
+| buffer                        | 设置out缓冲区的大小，默认为8kb                               |
+| errorPage                     | 设置当前jsp页面运行时出错，自动跳转的错误页面路径。吗        |
+| isErrorpage                   | 设置当前jsp页面是否是错误页面信息页面。默认是false，如果是true，可以获取异常信息 |
+| session                       | 设置访问当前jsp页面，是否会创建HTTP Session对象，默认是true  |
+| extends                       | 设置jsp翻译出来的翻译类默认继承谁。                          |
+
+errorPage:表示错误后自动跳转去的路径。路径一般以`/`打头，表示请求地址：`http://ip:port/工程路径`
+
+## JSP中常用的脚本
+
+### 声明脚本
+
+声明脚本的格式
+
+```jsp
+<%! 声明Java代码 %>
+作用：可以给翻译出来的Java类定义属性和方法甚至是静态代码快内部类等。
+```
+
+# 8. Cookie
+
+> 面试题
+>
+> 1. cookie可以存储在浏览器或者本地，session只能存在服务器中
+> 2. session能够存储任意的Java对象，cookie只能存储String类型的对象
+> 3. session比cookie更安全（Cookie有安全隐患，可以通过拦截或本地文件找到你的Cookie进行攻击）
+> 4. 单个Cookie保存的数据不能超过4k，很多浏览器最多可以保存20个cookie，Session是没有大小限制和服务器的内存大小有关。
+
+## 1. 什么是Cookie
+
+cookie：小型文本文件，<font color=red>是某些网站为了辨别用户身份</font>，进行Session跟踪而存储在本地终端上的数据，<font color =red>由用户客户端计算机暂时或永久保存的信息。</font>
+
+## 2. 为什么要使用Cookie？解决了什么问题？
+
+web使用http协议传输，而该协议是无状态的，对于事务没有记忆能力。意味着如果后续处理器需要前面的信息，则需重新上传，导致每次传送的数据量增大。在服务器不需要先前信息时，应答就比较快。
+
+**解决了如下问题**
+
+- 第一次登录后服务器返回一些数据（cookie)给浏览器，然后浏览器保存在本地，当用户发送第二次请求的时候，就会自动的把上次请求存储的cookie数据自动携带给服务器，服务器通过浏览器携带的数据，就能判断用户是哪一个
+- 特点：<font color=red>cookie存储的数据量有限</font>，不同浏览器具有不同的存储大小。但是一般不超过4kb
+- 给客户端颁发通行证，无论谁访问都需要携带自己的通行证，这样服务器就能通过cookie确认客户身份。
+
+## 3. cookie什么时候产生？
+
+- Cookie的使用先看需求。有的浏览器可以禁用cookie。而且服务端也可以不set-Cookie
+- <font color=red>`客户端向服务器端发送一个请求的时候，服务端向客户端发送一个Cookie然后浏览器将Cookie保存`</font>
+- Cookie有两种保存方式，一种是浏览器会将cookie保存在**内存**中，还有一种是保存在客户端的硬盘中，之后的每一次HTTP请求，浏览器都会将Cookie发送给服务器段。
+
+## 4. cookie的生存周期
+
+在生成cookie的时候，会生成一个值，而这个值就是cookie的生存周期，这个周期内cookie有效，超出周期，cookie就会被清除。有些页面将cookie的生存周期设置为`0`或者负值，这样在关闭浏览器时，就马上清楚cookie，不会记录用户信息，更加安全。
+
+## 5. cookie的缺陷
+
+1. 数量受限。一个浏览器最多能创建300个cookie，每个不能超过4kb，每个web站点能设置的cookie总数不能超过20个
+2. 安全性无法得到保障。
+3. 浏览器可以禁用cookie
+
+## 6. cookie的应用场景
+
+1. 安全性要求不高的场景
+2. 不需要存储大量的数据
+3. 主要应用场景是用来做客户端和服务器之间的状态保持技术。
+
+# 9. Session
+
+## 1. 什么是会话
+
+`用户点开一个浏览器，点击多个超链接，访问服务器多个web资源，然后关闭浏览器，真个过程称为一个会话`
+
+## 2. 什么是session
+
+**session**：在计算机中，尤其是在网络应用中，称为`会话控制`。Session对象存储特定用户会话所需的属性和配置信息。
+
+## 3. session什么时候产生？
+
+- 当用户请求来自应用程序的web页时，如果该用户还没有会话，则web服务器将自动创建一个Session对象。
+- 当用户在应用程序的web页之间跳转时，存储在Session对象中的变量将不会丢失，而是在整个用户会话中一直存在下去
+- 服务器会向浏览器发送一个每个用户特有的sessionID，让他进入到cookie里
+- 服务器同时也把sessionID和对应的用户信息、用户操作记录在服务器上，这些记录就是session。再次访问时会带入发送cookie给服务器，其中就包含sessionID。
+- 服务器从cookie里找到sessionID，再根据sessionID找到以前记录的用户信息就可以直到他之前操控，访问过什么地方。
+
+## 4. session的声明周期
+
+- 根据需求设定。你登陆一个服务器，服务器返回给你一个sessionID，登录成功之后，在一定时间之内，没有对该服务器进行任何HTTP请求，半个小时后你进行一次http请求，会提示你重新登录。
+
+## 5. 小结
+
+session是另一种记录客户状态的机制，不同的是，cookie保存在客户端中，而session存储在服务器上。客户端访问服务器时，服务器把客户端信息以某种形式记录在服务器上，这就是session。客户端浏览器再次访问时，只需要从该session中查找该客户端的状态就可以了。
+
+# 10. cookie和session结合使用
+
+> 如今市场或企业中，一般有两种存储方式：
+
+1. `存储在服务端`：通过cookie存储一个session_id,然后具体数据则是保存在session中。如果用户已经登录，则服务器会在cookie中保存一个session_id，下次再次请求的时候，会把该session_id携带上来，服务器根据session_id在session库中，获取用户的session数据，就能直到该用户到底是谁，以及之前保存的信息。
+2. `将session数据加密，然后存储在cookie中`
+
+# 10. filter
+

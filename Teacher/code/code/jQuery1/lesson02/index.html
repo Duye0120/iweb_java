@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jquery/jquery-1.8.3.js"></script>
+</head>
+<body>
+<div id="id-box">id box</div>
+<div class="cls-box">cls box</div>
+<div>box</div>
+<script>
+  /*jQuery对象： jQuery将所有的dom元素全部封装到一个 jQuery对象中*/
+  // 创建 jQuery 对象
+  let instance = new jQuery('#id-box');
+  // 1. 通过选择器
+  console.log(instance)
+  instance.click(function () {
+    // 点击后回调
+    // 2. 通过DOM对象 $(this)
+    // console.log(this.text()); // this 不是 jQuery对象
+    // console.log($(this).text()); // $(this) 将this封装成jQuery对象
+  })
+
+  // 3. 函数 : load 页面加载之后
+  // window.addEventListener('load', function () {
+  //   alert('load')
+  // })
+
+  // 默认就是加载事件
+  $(function () {
+    alert('load')
+  })
+
+</script>
+</body>
+</html>

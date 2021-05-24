@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .login {
+      margin: 100px auto;
+      width: 500px;
+      height: 400px;
+    }
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="login">
+  <form action="http://www.baidu.com" onsubmit="return _validate()">
+    <div class="username">
+      <label for="username">username:</label>
+      <input type="text" id="username"> <!--数组或字母组合,必须字母开头 长度 >= 6 <=10 -->
+      <span class="username-info"></span>
+    </div>
+    <div class="password">
+      <label for="password">password:</label>
+      <input type="password" id="password"> <!--密码长度>=8-->
+      <span class="password-info"></span>
+    </div>
+    <div class="code">
+      <label for="code"></label>
+      <input type="text" id="code" placeholder="请输入验证码">
+      <span class="code-info"></span>
+    </div>
+    <div class="btn-group" style="margin-top: 18px">
+      <button type="submit">注册</button>
+      <button type="reset">重置</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  // 验证的方法
+  function _validate() {
+
+    //验证验证码
+    // TO DO
+
+    // 验证账户
+    let username = $("#username").val();
+    let pattern = /^[A-Za-z][A-Za-z0-9]{5,9}$/;
+
+    // 验证用户名
+    if (!pattern.test(username)) {
+      $(".login .username-info").text("用户名不合法");
+      return false;
+    }
+    $(".login .username-info").text("");
+
+    // 验证密码
+    let password = $("#password").val();
+    if (password.length === 0) {
+      $(".login .password-info").text("密码不能为空");
+      return false;
+    }
+    if (password.length < 8) {
+      $(".login .password-info").text("密码不合法");
+      return false;
+    }
+    $(".login .password-info").text("");
+    return true;
+  }
+
+  /**
+   * 生成验证码
+   */
+  function code() {
+    // TO DO 使用JS生成一个随机的验证码 : 只是练习实际的应用场景验证码不是前端生成 而是 有服务器端生成
+    $(".code > label").text("12345");
+  }
+
+  code();
+  $("#reset").click(function(){
+    $("#username").val("");
+    $("#password").val("");
+  })
+</script>
+</body>
+</html>

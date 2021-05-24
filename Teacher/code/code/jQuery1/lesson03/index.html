@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jquery/jquery-1.8.3.js"></script>
+</head>
+<body>
+
+<div class="box">box</div>
+
+<script>
+
+  // let box = new jQuery(".box"); // 支持所有的css选择器
+  /**
+   *
+   * function $(){}
+   */
+  let box = $(".box"); // $() 其实是调用一个方法 , 这是简写
+  console.log(box.text());
+
+</script>
+
+</body>
+</html>

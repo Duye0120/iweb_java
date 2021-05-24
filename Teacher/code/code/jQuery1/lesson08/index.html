@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jquery/jquery-1.8.3.js"></script>
+</head>
+<body>
+<div class="box">box</div>
+
+<input type="text">
+<script>
+  // $(".box").before("<div>pox</div>")
+  // $(".box").append('<div>pox</div>')
+
+  $("input[type=text]").appendTo($(".box"))
+
+</script>
+</body>
+</html>

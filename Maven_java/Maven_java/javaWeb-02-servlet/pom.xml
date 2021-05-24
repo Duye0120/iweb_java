@@ -13,6 +13,7 @@
         <module>servlet-02</module>
         <module>response</module>
         <module>atguigu</module>
+        <module>javaweb-session-cookie</module>
     </modules>
 
 

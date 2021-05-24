@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="servlet-01" />
+        <module name="atguigu" />
         <module name="servlet-02" />
         <module name="response" />
-        <module name="atguigu" />
+        <module name="javaweb-session-cookie" />
+        <module name="servlet-01" />
       </profile>
     </annotationProcessing>
   </component>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid black;
+    }
+  </style>
+  <script src="../jquery/jquery-1.8.3.js"></script>
+</head>
+<body>
+
+<div class="box"></div>
+<script>
+  let box = $(".box");
+  console.log(box.offset()); // top left
+  console.log(box.height())
+  console.log(box.width())
+  console.log(box.innerWidth())
+  console.log(box.outerWidth())
+</script>
+</body>
+</html>

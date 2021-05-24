@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/atguigu" />
+    <file type="web" url="file://$PROJECT_DIR$/javaweb-session-cookie" />
     <file type="web" url="file://$PROJECT_DIR$/response" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-01" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-02" />

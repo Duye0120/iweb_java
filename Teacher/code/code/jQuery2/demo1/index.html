@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../jquery/jquery-1.8.3.js"></script>
+
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      display: block;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<button class="btn">点击</button>
+<div class="box"></div>
+
+<script>
+  // $(".box").show(2000).hide(2000);
+  // $(".box").slideDown().slideUp();
+
+  $(".btn").on('click', function () {
+    $(".box").animate({
+      left: '200px',
+      top: '200px'
+    }, 2000)
+  })
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #text {
+      color: red;
+    }
+  </style>
+  <!--引用jQuery-->
+  <script src="../jquery/jquery-1.8.3.js"></script>
+  <!--
+  jQuery是一个JS的封装库,其作用就是简化的了js的写法,提高了开发的效率, 解决了兼容性问题
+  -->
+</head>
+<body>
+
+<p id="text">这是一个P标签</p>
+
+<script>
+  /*JS的方式实现 获取 P 标签的文本值*/
+  var text = document.getElementById('text');
+  console.log(text.innerText);
+  /*jQuery的当时来获取*/
+  console.log($('#text').text())  /*这种写法更加方便简洁*/
+
+  /*兼容性问题*/  /*SCRIPT438: 对象不支持“getComputedStyle”属性或方法*/
+  // var color = window.getComputedStyle(text)['color'];
+  // console.log(color)
+
+  console.log($("#text").css('color'))
+
+</script>
+
+</body>
+</html>
