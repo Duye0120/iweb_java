@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+<!--以前的-->
+<div class="login" onsubmit="return _validate()">
+  <form action="">
+    <label for="username">username:</label>
+    <input type="text" name="username" id="username">
+    <label for="password">password:</label>
+    <input type="password" name="password" id="password">
+    <input type="submit" value="登录">
+  </form>
+</div>
+
+<script>
+  function _validate() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    console.log(username + "\t" + password);
+    return false;
+  }
+</script>
+
+<!--vue-->
+<div id="login">
+  <label for="username1">username:</label>
+  <input type="text" name="username" id="username1" v-model="username">
+  <label for="password1">password:</label>
+  <input type="password" name="password" id="password1" v-model="password">
+  <input v-on:click="_login()" type="button" value="登录">
+</div>
+
+<script>
+  let vue = new Vue({
+    el: "#login",
+    data: {
+      username: "",
+      password: ""
+    },
+    methods: {
+      _login: function () {
+        console.log(this.username + "\t" + this.password);
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

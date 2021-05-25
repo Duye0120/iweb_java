@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <button v-on:click="_click">{{message}}</button>
+
+  <it-btn></it-btn>
+</div>
+
+<script>
+
+  Vue.component('it-btn', {
+    data() {
+      return {
+        message: "hello"
+      }
+    },
+    template: `
+      <button>{{message}}</button>
+    `
+  })
+
+  let vue = new Vue({
+    el: "#app",
+    data: {
+      message: "登录"
+    },
+    methods: {
+      _click: function () {
+        alert('click')
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

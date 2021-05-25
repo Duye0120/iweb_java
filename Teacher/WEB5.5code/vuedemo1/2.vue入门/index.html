@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../vue.js"></script>
+  <!--
+  JS: document 渲染
+  Vue: M(model)V(view)VM 模式的框架 双向绑定 双向渲染
+  model : 数据模型
+  View : 用户界面
+  模型数据的改变会立即渲染到页面
+  页面数据的改变会立即影响到模型数据
+  -->
+</head>
+<body>
+<!--dom渲染-->
+<div id="box"></div>
+<button id="btn">点我</button>
+<script>
+  document.getElementById("box").innerText = 'hello world';
+  document.getElementById("btn").addEventListener('click', function () {
+    document.getElementById("box").innerText = '123456';
+  })
+</script>
+<!--Vue双向绑定-->
+<div id="app">
+  <div>{{message}}</div>
+  <button v-on:click="_click">点我</button>
+</div>
+
+<script>
+  let vue = new Vue({
+    el: "#app", // 绑定
+    data: {
+      message: "hello world"
+    },
+    methods: {
+      _click: function () {
+        this.message = '123456';
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

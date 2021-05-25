@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../vue.js"></script>
+  <style>
+    .box, .pox {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <h1>插值:{{message}}</h1> <!--插值-->
+  <h1 v-bind:item="item"></h1> <!--绑定属性-->
+  <h1 :item="item"></h1> <!--绑定属性 简写-->
+  <h1>{{count+1}}</h1> <!--使用JS表达式-->
+  <!--
+  v-if(不渲染标签) vs v-show(通过display属性来实现)
+  v-if： 本身就不希望显示这个标签 ： 评价 中 好评 差评
+
+  -->
+  <!--v-on: 绑定事件-->
+  <button @click="_change">点我</button>
+  <div class="box" v-if="isShow"></div>
+  <hr>
+  <div class="box" v-show="isShow"></div>
+
+  <div class="pox" v-on:mouseenter="_mouseenter" v-on:mouseout="_mouseout">
+    <button class="btn" v-show="!isHover">找相似</button>
+  </div>
+
+</div>
+<script>
+  let vue = new Vue({
+    el: "#app",
+    data: {
+      message: "hello world",
+      item: "attr",
+      count: 1,
+      isShow: true,
+      isHover: true
+    },
+    methods: {
+      _change: function () {
+        this.isShow = !this.isShow;
+      },
+      _mouseenter: function () {
+        this.isHover = false;
+      },
+      _mouseout: function () {
+        this.isHover = true;
+      }
+    }
+  })
+</script>
+</body>
+</html>

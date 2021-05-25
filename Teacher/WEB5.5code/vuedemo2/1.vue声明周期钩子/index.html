@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <h1>{{message}}</h1>
+  <p>一些内容</p>
+  <input type="text" v-model="name">
+</div>
+
+<script>
+  let vue = new Vue({
+    el: "#app",
+    data: {
+      message: "hello vue",
+      name: "admin"
+    },
+    methods: {},
+    beforeCreate: function () {
+      console.log("beforeCreate"); // 创建Vue实例之前
+    },
+    created: function () {
+      // 常用的： TO DO 一些事情： 访问服务器获取数据
+      console.log("created");// 成功创建之后：通过el属性绑定了标签
+    },
+    beforeMount: function () {
+      console.log("beforeMount");// 初始化虚拟dom之前： 将标签和虚拟dom中的数据(data)、方法(methods)进一一绑定
+    },
+    mounted: function () {
+      // 获取标签中的数据
+      console.log("mounted");// 挂载成功
+    },
+    beforeUpdate: function () {
+      console.log("beforeUpdate"); // 数据发生改变之前
+    },
+    updated: function () {
+      console.log("updated")// 数据发生改变之后
+    },
+    beforeDestroy: function () {
+      console.log("beforeDestroy");
+    },
+    destroyed: function () {
+      console.log("destroyed");
+    }
+  })
+</script>
+
+</body>
+</html>

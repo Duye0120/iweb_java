@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <h1>firstName:{{firstName}}</h1>
+  <h1>lastName:{{lastName}}</h1>
+  <h1>fullName:{{fullName}}</h1>
+  <hr>
+</div>
+
+<script>
+  let vue = new Vue({
+    el: "#app",
+    data: {
+      firstName: "foo",
+      lastName: "bar",
+      fullName: ""
+    },
+    // 侦听属性： 一个值的改变影响多个结果
+    watch: {
+      firstName: function (newVal, val) {
+        console.log(newVal, "-", val);
+        this.fullName = newVal + " " + this.lastName;
+      },
+      lastName: function (newVal, val) {
+        console.log(newVal, "-", val);
+        this.fullName = this.firstName + " " + newVal;
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
