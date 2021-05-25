@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{message}}</p>
+      <button @click="_reverseMessage">反转</button>
+    </div>
+
+
+    <div id="app-1">
+      <input type="text" v-model="message1" />
+      <p>{{message1}}</p>
+    </div>
+
+    <script>
+      var vue = new Vue({
+        el: "#app",
+        data() {
+          return {
+            message: "hello world",
+          };
+        },
+        methods: {
+          _reverseMessage: function () {
+            this.message = this.message.split("").reverse().join("");
+          },
+        },
+      });
+      
+    </script>
+    <script>
+      var vue1 = new Vue({
+        el: "#app-1",
+        data() {
+          return {
+            message1: "",
+          };
+        },
+      });
+    </script>
+    <script>
+      Vue.components("todo-list", {
+          template:"<li>{{ todo.text }}</li>"
+        });
+    </script>
+  </body>
+</html>
