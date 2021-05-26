@@ -1,59 +1,224 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 .box {
-    width: 290px;
-    height: 340px;
-    background-color: blanchedalmond;
+  margin-top: 200px;
+  float: left;
+  width: 290px;
+  height: 340px;
+  margin-left: 20px;
+  box-shadow: 0 3px 11px #888;
+  background-image: url('../img/background.png');
+  background-repeat: no-repeat;
 }
 
 .box-hd {
-    width: 250px;
-    height: 60px;
-    padding: 0 20px;
+  width: 250px;
+  height: 60px;
+  padding: 0 20px;
 }
 
 .box-hd-a {
-    display: inline-block;
-    height: 32px;
-    margin-top: 12px;
-    color: black;
-    position: relative;
-
+  /* display: inline-block; */
+  height: 32px;
+  margin-top: 12px;
+  color: black;
+  position: relative;
 }
 
-.box-hd-a>h3 {
-    float: left;
-    font-weight: 700;
+.box-hd-a > h3 {
+  float: left;
+  font-weight: 700;
+  display: block;
+  width: auto;
+  height: 32px;
+  font-size: 24px;
+}
+
+.box-hd-a > i {
+  color: red;
+  position: relative;
+  left: 10px;
+  top: 22px;
+}
+.slider {
+  width: 290px;
+  height: 250px;
+}
+
+.item {
+  width: 290px;
+  height: 215px;
+  padding: 0px 50px;
+}
+.item > img {
+  position: absolute;
+  left: 85px;
+  top: 20px;
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.carousel-caption {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 290px;
+}
+#good-title {
+  margin-top: 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  width: 200px;
+  line-height: 19px;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+  height: 19px;
+  text-shadow: none;
+  margin: 0 auto;
+}
+#find-more {
+  width: 290px;
+  height: 16px;
+  line-height: 16px;
+  left: -35px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  text-shadow: none;
+  position: relative;
+  top: 8px;
+  left: 4px;
+}
+#good-price {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  color: red;
+  text-shadow: none;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  top: 15px;
+}
+.carousel-control.left {
+  background-image: none;
+}
+.carousel-control.right {
+  background-image: none;
+}
+.carousel-control > span {
+  color: red;
+}
+.table-header {
+  width: 280px;
+  height: 30px;
+  margin: 3px 5px 0;
+}
+.table-header > a {
+  float: left;
+  height: 20px;
+  width: 62px;
+  margin: auto 4px;
+  background-color: #f6f6f6;
+  color: #999;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+.table-header > a:hover {
+  background-color: red;
+  color: #fff;
+  text-decoration: none;
+}
+.table {
+  width: 290px;
+  height: 230px;
+}
+.goods {
+  height: 70px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.goods > img {
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+.goods-contain {
+  margin-left: 20px;
+  float: left;
+  width: 180px;
+  height: 70px;
+}
+.goods-introduce {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  height: 36px;
+  line-height: 18px;
+  overflow: hidden;
+}
+.goods-price {
+  display: block;
+  color: red;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.store-list {
+  width: 290px;
+  height: 266px;
+  padding: 0 15px;
+}
+.store {
+  width: 260px;
+  height: 128px;
+  margin: 0 0 10px;
+  padding: 15px 10px 0 15px;
+}
+.store-contain {
+  float: left;
+  width: 120px;
+  height: 98px;
+}
+.store > img {
+  float: right;
+  width: 100px;
+  height: 100px;
+}
+.store-name {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.self {
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid red;
+  border-radius: 3px;
+  font-size: 12px;
+  color: red;
+  margin-right: 5px;
+}
+.other {
+  height: 14px;
+  line-height: 14px;
+  border: 1px solid blue;
+  border-radius: 3px;
+  font-size: 12px;
+  color: blue;
+}
+.store-fans{
     display: block;
-    width: auto;
-    height: 32px;
-    font-size: 24px;
-}
-
-.box-hd-a>i {
-    color: red;
-    position: relative;
-    left: 10px;
-    top: 7px;
-}
-.slider{
-    width: 290px;
-    height: 250px;
-    background-color: rosybrown;
-}
-.slider-btn{
-    width: 40px;
-    height: 40px;
-    border-radius: 1em;
-    border: none;
-    background-color:rgba(131, 128, 128, .5);
-    display: flex;
-    justify-content: space-between;
-}
-.slider-btn>bi{
-    line-height: 40px;
+    margin-top: 20px;
+    color: #999;
+    font-size: 12px;
 }
