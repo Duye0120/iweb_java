@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="./js/vue.js"></script>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="good-list-wrap">
+        <div
+          class="good-wrap"
+          v-for="good in goods"
+          :id="good.id"
+          @mouseenter="_btnShow(good.id)"
+          @mouseleave="_btnHide(good.id)"
+        >
+          <div class="img-wrap">
+            <img :src="good.src" alt="" />
+          </div>
+          <div class="price-wrap">
+            <span>￥</span><span>{{good.price}}</span><span>.00</span>
+          </div>
+          <div class="title-wrap">
+            <p><span>京东电脑</span>{{good.title}}</p>
+          </div>
+          <div class="rating-wrap">
+            <p>{{good.rating}}万+<span>条评价</span></p>
+          </div>
+          <div class="shop-wrap">
+            <p>{{good.shop}}</p>
+          </div>
+          <div class="self-wrap">
+            <span v-if="good.self">自营</span>
+          </div>
+          <div class="btn" v-show="good.btnShow">
+            <span>找相似</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var vue = new Vue({
+      el: "#app",
+      data: {
+        goods: [],
+      },
+      created: function () {
+        for (let i = 0; i < 12; i++) {
+          let good = {
+            id: i + 1,
+            src: "./img/5a0de39c3ba32d16.jpg",
+            title:
+              "戴尔dell成就3690升级版英特尔酷睿i3商用台式机电脑主机(i3-10105 8G 1T 三年",
+            price: 3139.0,
+            rating: 5,
+            shop: "联想京东自营",
+            self: true,
+            btnShow: false,
+          };
+          if (i % 2 === 0) {
+            good.self = false;
+          }
+          this.goods.push(good);
+        }
+      },
+      methods: {
+        _btnShow: function (id) {
+          for (let i = 0; i < this.goods.length; i++) {
+            if (this.goods[i].id === id) {
+              this.goods[i].btnShow = true;
+            }
+          }
+        },
+        _btnHide: function (id) {
+          for (let i = 0; i < this.goods.length; i++) {
+            if (this.goods[i].id === id) {
+              this.goods[i].btnShow = false;
+            }
+          }
+        },
+      },
+    });
+  </script>
+</html>

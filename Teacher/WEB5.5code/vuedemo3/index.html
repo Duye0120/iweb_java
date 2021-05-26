@@ -1,233 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <script src="./vue.js"></script>
-  <style>
-    body, p {
-      margin: 0;
-      padding: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <script src="./vue.js"></script>
+    <style>
+      body,
+      p {
+        margin: 0;
+        padding: 0;
+      }
 
-    #app {
-      margin: 10px auto;
-      width: 1020px;
-    }
+      #app {
+        margin: 10px auto;
+        width: 1020px;
+      }
 
-    #app .good-list-wrap {
-      width: 1040px;
-      display: flex;
-      flex-wrap: wrap;
-    }
+      #app .good-list-wrap {
+        width: 1040px;
+        display: flex;
+        flex-wrap: wrap;
+      }
 
-    #app .good-list-wrap .good-wrap {
-      width: 240px;
-      margin: 10px 20px 0 0;
-      cursor: pointer;
-      position: relative;
-      padding-bottom: 20px;
-    }
+      #app .good-list-wrap .good-wrap {
+        width: 240px;
+        margin: 10px 20px 0 0;
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 20px;
+      }
 
-    #app .good-list-wrap .good-wrap .btn {
-      position: absolute;
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      bottom: 60px;
+      #app .good-list-wrap .good-wrap .btn {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        bottom: 60px;
+      }
 
-    }
+      #app .good-list-wrap .good-wrap .btn > span {
+        padding: 5px 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 10px;
+      }
 
-    #app .good-list-wrap .good-wrap .btn > span {
-      padding: 5px 20px;
-      background-color: rgba(0, 0, 0, .7);
-      color: white;
-      border-radius: 10px;
-    }
+      #app .good-list-wrap .good-wrap .btn > span:hover {
+        background-color: red;
+      }
 
-    #app .good-list-wrap .good-wrap .btn > span:hover {
-      background-color: red;
-    }
+      #app .good-list-wrap .good-wrap:hover {
+        box-shadow: 0 0 5px black;
+      }
 
-    #app .good-list-wrap .good-wrap:hover {
-      box-shadow: 0 0 5px black;
-    }
+      #app .good-list-wrap .good-wrap .img-wrap {
+        width: 240px;
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-    #app .good-list-wrap .good-wrap .img-wrap {
-      width: 240px;
-      height: 240px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      #app .good-list-wrap .good-wrap .img-wrap > img {
+        width: 220px;
+        height: 220px;
+      }
 
-    #app .good-list-wrap .good-wrap .img-wrap > img {
-      width: 220px;
-      height: 220px;
-    }
+      #app .good-list-wrap .good-wrap .price-wrap {
+        color: red;
+        font-size: 18px;
+        margin-bottom: 10px;
+        padding: 0 10px;
+      }
 
-    #app .good-list-wrap .good-wrap .price-wrap {
-      color: red;
-      font-size: 18px;
-      margin-bottom: 10px;
-      padding: 0 10px;
-    }
+      #app .good-list-wrap .good-wrap .price-wrap > span:first-child {
+        font-size: 16px;
+      }
 
-    #app .good-list-wrap .good-wrap .price-wrap > span:first-child {
-      font-size: 16px;
-    }
+      #app .good-list-wrap .good-wrap .title-wrap {
+        font-size: 12px;
+        color: #555;
+        padding: 0 10px;
+        margin-bottom: 10px;
+      }
 
-    #app .good-list-wrap .good-wrap .title-wrap {
-      font-size: 12px;
-      color: #555;
-      padding: 0 10px;
-      margin-bottom: 10px;
-    }
+      #app .good-list-wrap .good-wrap .title-wrap > p {
+        line-height: 20px;
+        height: 40px;
+        overflow: hidden;
+        cursor: pointer;
+      }
 
-    #app .good-list-wrap .good-wrap .title-wrap > p {
-      line-height: 20px;
-      height: 40px;
-      overflow: hidden;
-      cursor: pointer;
-    }
+      #app .good-list-wrap .good-wrap .title-wrap > p > span {
+        padding: 0 3px;
+        background-color: red;
+        color: #ffffff;
+        border-radius: 2px;
+        margin-right: 5px;
+      }
 
-    #app .good-list-wrap .good-wrap .title-wrap > p > span {
-      padding: 0 3px;
-      background-color: red;
-      color: #ffffff;
-      border-radius: 2px;
-      margin-right: 5px;
-    }
+      #app .good-list-wrap .good-wrap .title-wrap > p:hover {
+        color: red;
+      }
 
-    #app .good-list-wrap .good-wrap .title-wrap > p:hover {
-      color: red;
-    }
+      #app .good-list-wrap .good-wrap .rating-wrap {
+        margin-bottom: 10px;
+        padding: 0 10px;
+      }
 
-    #app .good-list-wrap .good-wrap .rating-wrap {
-      margin-bottom: 10px;
-      padding: 0 10px;
-    }
+      #app .good-list-wrap .good-wrap .rating-wrap > p {
+        font-size: 12px;
+        font-weight: 700;
+        color: #6060d7;
+      }
 
-    #app .good-list-wrap .good-wrap .rating-wrap > p {
-      font-size: 12px;
-      font-weight: 700;
-      color: #6060d7;
-    }
+      #app .good-list-wrap .good-wrap .rating-wrap > p > span {
+        font-weight: 300;
+        color: #666;
+      }
 
-    #app .good-list-wrap .good-wrap .rating-wrap > p > span {
-      font-weight: 300;
-      color: #666;
-    }
+      #app .good-list-wrap .good-wrap .shop-wrap {
+        font-size: 12px;
+        color: #666;
+        padding: 0 10px;
+        margin-bottom: 10px;
+      }
 
-    #app .good-list-wrap .good-wrap .shop-wrap {
-      font-size: 12px;
-      color: #666;
-      padding: 0 10px;
-      margin-bottom: 10px;
-    }
+      #app .good-list-wrap .good-wrap .shop-wrap > p {
+        width: 100px;
+        /*这三个属性需要一起使用*/
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-    #app .good-list-wrap .good-wrap .shop-wrap > p {
-      width: 100px;
-      /*这三个属性需要一起使用*/
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+      #app .good-list-wrap .good-wrap .self-wrap {
+        font-size: 12px;
+        height: 14px;
+        line-height: 14px;
+        padding: 0 10px;
+      }
 
-    #app .good-list-wrap .good-wrap .self-wrap {
-      font-size: 12px;
-      height: 14px;
-      line-height: 14px;
-      padding: 0 10px;
-    }
+      #app .good-list-wrap .good-wrap .self-wrap > span {
+        padding: 0 3px;
+        border-radius: 3px;
+        background-color: red;
+        color: #ffffff;
+      }
+    </style>
+  </head>
 
-    #app .good-list-wrap .good-wrap .self-wrap > span {
-      padding: 0 3px;
-      border-radius: 3px;
-      background-color: red;
-      color: #ffffff;
-    }
-
-
-  </style>
-</head>
-<body>
-
-<div id="app">
-  <div class="good-list-wrap">
-    <div class="good-wrap" v-for="good in goods" :id="good.id"
-         @mouseenter="_btnShow(good.id)"
-         @mouseleave="_btnHide(good.id)"
-    >
-      <div class="img-wrap">
-        <img :src="good.src" alt="">
-      </div>
-      <div class="price-wrap">
-        <span>￥</span><span>{{good.price}}</span><span>.00</span>
-      </div>
-      <div class="title-wrap">
-        <p><span>京东电脑</span>{{good.title}}</p>
-      </div>
-      <div class="rating-wrap">
-        <p>{{good.rating}}万+<span>条评价</span></p>
-      </div>
-      <div class="shop-wrap">
-        <p>{{good.shop}}</p>
-      </div>
-      <div class="self-wrap">
-        <span v-if="good.self">自营</span>
-      </div>
-      <div class="btn" v-show="good.btnShow">
-        <span>找相似</span>
+  <body>
+    <div id="app">
+      <div class="good-list-wrap">
+        <div
+          class="good-wrap"
+          v-for="good in goods"
+          :id="good.id"
+          @mouseenter="_btnShow(good.id)"
+          @mouseleave="_btnHide(good.id)"
+        >
+          <div class="img-wrap">
+            <img :src="good.src" alt="" />
+          </div>
+          <div class="price-wrap">
+            <span>￥</span><span>{{good.price}}</span><span>.00</span>
+          </div>
+          <div class="title-wrap">
+            <p><span>京东电脑</span>{{good.title}}</p>
+          </div>
+          <div class="rating-wrap">
+            <p>{{good.rating}}万+<span>条评价</span></p>
+          </div>
+          <div class="shop-wrap">
+            <p>{{good.shop}}</p>
+          </div>
+          <div class="self-wrap">
+            <span v-if="good.self">自营</span>
+          </div>
+          <div class="btn" v-show="good.btnShow">
+            <span>找相似</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<script>
-  new Vue({
-    el: "#app",
-    data: {
-      goods: []
-    },
-    created: function () {
-      // 加载数据 模拟测试数据
-      for (let i = 0; i < 12; i++) {
-        let good = {
-          id: i + 1,
-          src: './imgs/5a0de39c3ba32d16.jpg',
-          title: '戴尔dell成就3690升级版英特尔酷睿i3商用台式机电脑主机(i3-10105 8G 1T 三年',
-          price: 3139.00,
-          rating: 5,
-          shop: '联想京东自营旗舰店',
-          self: true,
-          btnShow: false
-        }
-        if (i % 2 === 0) {
-          good.self = false;
-        }
-        this.goods.push(good);
-      }
-    },
-    methods: {
-      _btnShow: function (id) {
-        for (let i = 0; i < this.goods.length; i++) {
-          if (this.goods[i].id === id) {
-            this.goods[i].btnShow = true;
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          goods: [],
+        },
+        created: function () {
+          // 加载数据 模拟测试数据
+          for (let i = 0; i < 12; i++) {
+            let good = {
+              id: i + 1,
+              src: "./imgs/5a0de39c3ba32d16.jpg",
+              title:
+                "戴尔dell成就3690升级版英特尔酷睿i3商用台式机电脑主机(i3-10105 8G 1T 三年",
+              price: 3139.0,
+              rating: 5,
+              shop: "联想京东自营旗舰店",
+              self: true,
+              btnShow: false,
+            };
+            if (i % 2 === 0) {
+              good.self = false;
+            }
+            this.goods.push(good);
           }
-        }
-      },
-      _btnHide: function (id) {
-        for (let i = 0; i < this.goods.length; i++) {
-          if (this.goods[i].id === id) {
-            this.goods[i].btnShow = false;
-          }
-        }
-      }
-    }
-
-  })
-</script>
-
-</body>
+        },
+        methods: {
+          _btnShow: function (id) {
+            for (let i = 0; i < this.goods.length; i++) {
+              if (this.goods[i].id === id) {
+                this.goods[i].btnShow = true;
+              }
+            }
+          },
+          _btnHide: function (id) {
+            for (let i = 0; i < this.goods.length; i++) {
+              if (this.goods[i].id === id) {
+                this.goods[i].btnShow = false;
+              }
+            }
+          },
+        },
+      });
+    </script>
+  </body>
 </html>

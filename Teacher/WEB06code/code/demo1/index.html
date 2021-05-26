@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!--通用样式-->
+  <link rel="stylesheet" href="./css/reset.css">
+  <!--bootstrap-->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.css">
+  <!--jQuery-->
+  <script src="./bootstrap/jQuery-2.1.1.js"></script>
+  <!--bootstrap-->
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <!--vue-->
+  <script src="./vue/vue.js"></script>
+
+  <style>
+
+    body {
+      background-color: #e2e0e0;
+    }
+
+    #header {
+      width: 100%;
+      height: 30px;
+      background-color: #cbc7c7;
+    }
+
+    #header .header-wrap {
+      width: 990px;
+      height: 30px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #header .header-wrap .addr-wrap > .glyphicon {
+      color: #b33333;
+    }
+
+    #header .header-wrap .addr-wrap > .addr {
+      font-size: 14px;
+      color: #666;
+    }
+
+    #header .header-wrap .nav-wrap {
+      height: 30px;
+    }
+
+    #header .header-wrap .nav-wrap > ul {
+      display: flex;
+      height: 30px;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    #header .header-wrap .nav-wrap > ul > li {
+      padding: 2px 8px;
+      color: #666666;
+    }
+
+    #header .header-wrap .nav-wrap > ul > li > a {
+      color: #666666;
+
+    }
+
+    #header .header-wrap .nav-wrap > ul > li > a.active {
+      color: #c22626;
+    }
+
+    #header .header-wrap .nav-wrap > ul > li > a:hover {
+      color: #c22626;
+    }
+
+    /*搜索框*/
+    #search {
+      width: 100%;
+      margin: 40px auto;
+    }
+
+    #search .search-wrap {
+      width: 990px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search .search-wrap .search {
+      width: 490px;
+      margin-right: 20px;
+    }
+
+    #search .search-wrap .shop-cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+      border: 1px solid #e8e8e8;
+      cursor: pointer;
+      color: #c22626;
+    }
+
+    #search .search-wrap .shop-cart:hover {
+      border: 1px solid #c22626;
+    }
+
+    #search .search-wrap .shop-cart .icon-wrap {
+      position: relative;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    #search .search-wrap .shop-cart .icon-wrap .count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 1px 5px;
+      background-color: #c22626;
+      color: #ffffff;
+      border-radius: 8px;
+    }
+
+    /*横幅*/
+    #banner {
+      width: 100%;
+      /*height: 470px;*/
+    }
+
+    #banner .banner-wrap {
+      width: 800px;
+      height: 470px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    #banner .banner-wrap .carousel-inner img {
+      width: 800px;
+      height: 400px;
+    }
+
+    #banner .seckill {
+      width: 990px;
+      height: 260px;
+      margin: 0 auto;
+      display: flex;
+    }
+
+    #banner .seckill .seckill-wrap {
+      flex: 190px 0 0;
+      width: 190px;
+      background: url("./imgs/bg.png") no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    #banner .seckill .seckill-wrap .title {
+      font-size: 28px;
+      margin-top: 30px;
+    }
+
+    #banner .seckill .seckill-wrap .time {
+      font-size: 16px;
+      margin-top: 100px;
+    }
+
+    #banner .seckill .seckill-wrap .time-wrap {
+      font-size: 18px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    #banner .seckill .seckill-wrap .time-wrap > span:nth-child(2n+1) {
+      background-color: #3f3d3d;
+      padding: 5px;
+    }
+
+    #banner .seckill .seckill-wrap .time-wrap > span:nth-child(2n+2) {
+      margin: 0 8px;
+    }
+
+    #banner .seckill .carousel-wrap {
+      flex: 1;
+      background-color: #ffffff;
+      margin: 0 10px;
+    }
+
+    #banner .seckill .carousel-wrap .item {
+      height: 260px;
+      /*display: flex;*/
+      font-size: 0;
+    }
+
+    #banner .seckill .carousel-wrap .item > div {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+    }
+
+    #banner .seckill .carousel-wrap .item > div > p {
+      font-size: 24px;
+    }
+
+    #banner .seckill .carousel-wrap .item img {
+      width: 150px;
+    }
+
+    #banner .seckill .brand-wrap {
+      flex: 190px 0 0;
+      width: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+    }
+
+    #banner .seckill .brand-wrap img {
+      width: 170px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    #banner .seckill .brand-wrap .link > a {
+      padding: 5px 30px;
+      background-color: #c22626;
+      color: #ffffff;
+      font-weight: 700;
+      border-radius: 30px;
+    }
+
+    /*商品列表*/
+    #app {
+      margin: 10px auto;
+      width: 1020px;
+    }
+
+    #app .good-list-wrap {
+      width: 1040px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #app .good-list-wrap .good-wrap {
+      width: 240px;
+      margin: 10px 20px 0 0;
+      cursor: pointer;
+      position: relative;
+      padding-bottom: 20px;
+      background-color: #ffffff;
+    }
+
+    #app .good-list-wrap .good-wrap .btn {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      bottom: 60px;
+
+    }
+
+    #app .good-list-wrap .good-wrap .btn > span {
+      padding: 5px 20px;
+      background-color: rgba(0, 0, 0, .7);
+      color: white;
+      border-radius: 10px;
+    }
+
+    #app .good-list-wrap .good-wrap .btn > span:hover {
+      background-color: red;
+    }
+
+    #app .good-list-wrap .good-wrap:hover {
+      box-shadow: 0 0 5px black;
+    }
+
+    #app .good-list-wrap .good-wrap .img-wrap {
+      width: 240px;
+      height: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #app .good-list-wrap .good-wrap .img-wrap > img {
+      width: 220px;
+      height: 220px;
+    }
+
+    #app .good-list-wrap .good-wrap .price-wrap {
+      color: red;
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+
+    #app .good-list-wrap .good-wrap .price-wrap > span:first-child {
+      font-size: 16px;
+    }
+
+    #app .good-list-wrap .good-wrap .title-wrap {
+      font-size: 12px;
+      color: #555;
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+
+    #app .good-list-wrap .good-wrap .title-wrap > p {
+      line-height: 20px;
+      height: 40px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    #app .good-list-wrap .good-wrap .title-wrap > p > span {
+      padding: 0 3px;
+      background-color: red;
+      color: #ffffff;
+      border-radius: 2px;
+      margin-right: 5px;
+    }
+
+    #app .good-list-wrap .good-wrap .title-wrap > p:hover {
+      color: red;
+    }
+
+    #app .good-list-wrap .good-wrap .rating-wrap {
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+
+    #app .good-list-wrap .good-wrap .rating-wrap > p {
+      font-size: 12px;
+      font-weight: 700;
+      color: #6060d7;
+    }
+
+    #app .good-list-wrap .good-wrap .rating-wrap > p > span {
+      font-weight: 300;
+      color: #666;
+    }
+
+    #app .good-list-wrap .good-wrap .shop-wrap {
+      font-size: 12px;
+      color: #666;
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+
+    #app .good-list-wrap .good-wrap .shop-wrap > p {
+      width: 100px;
+      /*这三个属性需要一起使用*/
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #app .good-list-wrap .good-wrap .self-wrap {
+      font-size: 12px;
+      height: 14px;
+      line-height: 14px;
+      padding: 0 10px;
+    }
+
+    #app .good-list-wrap .good-wrap .self-wrap > span {
+      padding: 0 3px;
+      border-radius: 3px;
+      background-color: red;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <div class="header-wrap">
+    <div class="addr-wrap">
+      <span class="glyphicon glyphicon-map-marker"></span>
+      <span class="addr">江苏</span>
+    </div>
+    <div class="nav-wrap">
+      <ul>
+        <li>
+          <a class="active" href="">你好,请登录</a>
+        </li>
+        <li>
+          <a href="">我的订单</a>
+        </li>
+        <li>
+          <a href="">我的京东</a>
+        </li>
+        <li>
+          <a href="">京东会员</a>
+        </li>
+        <li>网站导航</li>
+        <li>京东手机</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="search">
+  <div class="search-wrap">
+    <div class="search">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="电器">
+        <span class="input-group-addon btn btn-danger" style="padding: 0 20px;">
+            <span class="glyphicon glyphicon-search"></span>
+          </span>
+      </div>
+    </div>
+    <div class="shop-cart">
+      <div class="icon-wrap">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span class="count">0</span>
+      </div>
+      <div class="text">我的购物车</div>
+    </div>
+  </div>
+</div>
+<div id="banner">
+  <div class="banner-wrap">
+    <div class="carousel-wrap">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="./imgs/5fe2a94d763285fd.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img src="./imgs/6a8bfc0910be4981.jpg" alt="...">
+          </div>
+          <div class="item">
+            <img src="./imgs/6a8bfc0910be4989.jpg" alt="...">
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="seckill">
+    <div class="seckill-wrap">
+      <div class="title">京东秒伤</div>
+      <div class="time">10:00点场距离结束</div>
+      <div class="time-wrap">
+        <span class="hour">{{hour}}</span>
+        <span>:</span>
+        <span class="minute">{{minute}}</span>
+        <span>:</span>
+        <span class="second">{{second}}</span>
+      </div>
+    </div>
+    <div class="carousel-wrap">
+      <div id="carousel-seckill" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="good-wrap">
+              <img src="./imgs/g1.webp" alt="">
+              <p>11111</p>
+            </div>
+            <div class="good-wrap">
+              <img src="./imgs/g1.webp" alt="">
+              <p>11111</p>
+            </div>
+            <div class="good-wrap">
+              <img src="./imgs/g1.webp" alt="">
+              <p>11111</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="good-wrap">
+              <img src="./imgs/g2.webp" alt="">
+              <p>22222</p>
+            </div>
+            <div class="good-wrap">
+              <img src="./imgs/g2.webp" alt="">
+              <p>22222</p>
+            </div>
+            <div class="good-wrap">
+              <img src="./imgs/g2.webp" alt="">
+              <p>22222</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="good-wrap">
+              <img src="./imgs/g3.webp" alt="">
+              <p>33333</p>
+            </div>
+            <div class="good-wrap">
+              <img src="./imgs/g3.webp" alt="">
+              <p>33333</p>
+            </div>
+            <div class="good-wrap">
+              <img src="./imgs/g3.webp" alt="">
+              <p>33333</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-seckill" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-seckill" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+    <div class="brand-wrap">
+      <div class="img-wrap">
+        <img src="./imgs/o.webp" alt="">
+      </div>
+      <div class="link">
+        <a href="">品类秒杀</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div id="app">
+    <div class="good-list-wrap">
+      <div class="good-wrap" v-for="good in goods" :id="good.id"
+           @mouseenter="_btnShow(good.id)"
+           @mouseleave="_btnHide(good.id)"
+      >
+        <div class="img-wrap">
+          <img :src="good.src" alt="">
+        </div>
+        <div class="price-wrap">
+          <span>￥</span><span>{{good.price}}</span><span>.00</span>
+        </div>
+        <div class="title-wrap">
+          <p><span>京东电脑</span>{{good.title}}</p>
+        </div>
+        <div class="rating-wrap">
+          <p>{{good.rating}}万+<span>条评价</span></p>
+        </div>
+        <div class="shop-wrap">
+          <p>{{good.shop}}</p>
+        </div>
+        <div class="self-wrap">
+          <span v-if="good.self">自营</span>
+        </div>
+        <div class="btn" v-show="good.btnShow">
+          <span>找相似</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      goods: []
+    },
+    created: function () {
+      // 加载数据 模拟测试数据
+      for (let i = 0; i < 12; i++) {
+        let good = {
+          id: i + 1,
+          src: './imgs/5a0de39c3ba32d16.jpg',
+          title: '戴尔dell成就3690升级版英特尔酷睿i3商用台式机电脑主机(i3-10105 8G 1T 三年',
+          price: 3139.00,
+          rating: 5,
+          shop: '联想京东自营旗舰店',
+          self: true,
+          btnShow: false
+        }
+        if (i % 2 === 0) {
+          good.self = false;
+        }
+        this.goods.push(good);
+      }
+    },
+    methods: {
+      _btnShow: function (id) {
+        for (let i = 0; i < this.goods.length; i++) {
+          if (this.goods[i].id === id) {
+            this.goods[i].btnShow = true;
+          }
+        }
+      },
+      _btnHide: function (id) {
+        for (let i = 0; i < this.goods.length; i++) {
+          if (this.goods[i].id === id) {
+            this.goods[i].btnShow = false;
+          }
+        }
+      }
+    }
+
+  })
+
+
+  new Vue({
+    el: "#banner",
+    data: {
+      hour: 0,
+      minute: 0,
+      second: 0
+    },
+    created: function () {
+      let now = new Date();
+      this.hour = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+      this.minute = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+      this.second = now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds();
+      let this_ = this;
+      setInterval(function () {
+        now = new Date();
+        this_.hour = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+        this_.minute = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+        this_.second = now.getSeconds() < 10 ? '0' + now.getSeconds() : now.getSeconds();
+      }, 1000)
+    }
+  })
+</script>
+
+
+</body>
+</html>

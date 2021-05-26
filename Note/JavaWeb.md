@@ -831,3 +831,7 @@ session是另一种记录客户状态的机制，不同的是，cookie保存在�
 
 # 10. filter
 
+1. filter过滤器是Javaweb三大组件之一。三大组件分别是servlet程序，Listener监听器，Filter过滤器
+
+2. filter过滤器是JaveEE的规范，也就是接口
+3. 作用：拦截请求，过滤响应。
