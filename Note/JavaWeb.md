@@ -829,7 +829,7 @@ session是另一种记录客户状态的机制，不同的是，cookie保存在�
 1. `存储在服务端`：通过cookie存储一个session_id,然后具体数据则是保存在session中。如果用户已经登录，则服务器会在cookie中保存一个session_id，下次再次请求的时候，会把该session_id携带上来，服务器根据session_id在session库中，获取用户的session数据，就能直到该用户到底是谁，以及之前保存的信息。
 2. `将session数据加密，然后存储在cookie中`
 
-# 10. filter
+# 11. filter
 
 1. filter过滤器是Javaweb三大组件之一。三大组件分别是servlet程序，Listener监听器，Filter过滤器
 
