@@ -8,8 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo02" />
         <module name="demo01" />
-        <module name="webdemo" />
+        <module name="Day0603" />
+        <module name="webDemo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo03" target="1.5" />
+      <module name="demo04" target="1.8" />
+      <module name="Forward-Redirect" target="1.5" />
+      <module name="Forward_Redirect" target="1.7" />
+      <module name="Forward_Redriect" target="1.8" />
+      <module name="ForwardRedirect" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="" />
+    <file type="web" url="file://$PROJECT_DIR$/Day0603" />
+    <file type="web" url="file://$PROJECT_DIR$/Day0603" />
     <file type="web" url="file://$PROJECT_DIR$/demo01" />
     <file type="web" url="file://$PROJECT_DIR$/demo02" />
-    <file type="web" url="file://$PROJECT_DIR$/webdemo" />
+    <file type="web" url="file://$PROJECT_DIR$/demo04" />
+    <file type="web" url="file://$PROJECT_DIR$/Forward_Redriect" />
+    <file type="web" url="file://$PROJECT_DIR$/ForwardRedirect" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -15,8 +20,17 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Day0603/pom.xml" />
+        <option value="$PROJECT_DIR$/Forward-Redirect/pom.xml" />
+        <option value="$PROJECT_DIR$/Forward_Redirect/pom.xml" />
+        <option value="$PROJECT_DIR$/Forward_Redriect/pom.xml" />
+        <option value="$PROJECT_DIR$/demo03/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="14" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

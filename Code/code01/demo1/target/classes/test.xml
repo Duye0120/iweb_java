@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <bean>
+        <property name="name" value="admin"/>
+        <property name="pwd" value="123456"/>
+    </bean>
+    <bean>
+        <property name="name" value="jack"/>
+        <property name="pwd" value="123456"/>
+    </bean>
+</beans>

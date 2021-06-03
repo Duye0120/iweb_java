@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+  let jsonStr = '{"age":20,"id":1,"name":"jack"}'; // json 字符串
+
+  let jsonObj = JSON.parse(jsonStr);
+  console.log(jsonObj["age"]);
+  console.log(jsonObj.name);
+
+  jsonStr = '[{"age":20,"id":1,"name":"jack"},{"age":30,"id":2,"name":"tom"}]';
+  jsonObj = JSON.parse(jsonStr);
+  console.log(jsonObj);
+
+  console.log(typeof JSON.stringify(jsonObj));
+
+
+</script>
+</body>
+</html>
