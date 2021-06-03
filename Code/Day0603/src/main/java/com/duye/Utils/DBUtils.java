@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtils {
     private final String user = "root";
-    private final String pwd = "root";
+    private final String pwd = "123456";
     private final String url = "jdbc:mysql://localhost:3306/test?serverTimezone=UTC";
     private final String driver = "com.mysql.cj.jdbc.Driver";
     Connection connection = null;

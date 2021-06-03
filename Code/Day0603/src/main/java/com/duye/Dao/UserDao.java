@@ -13,7 +13,7 @@ public class UserDao {
         User user = null;
         DBUtils dbUtils = new DBUtils();
         Connection conn = dbUtils.getConnection();
-        String sql = "select * from user where user = ?";
+        String sql = "select * from tb_user where user = ?";
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1,username);
