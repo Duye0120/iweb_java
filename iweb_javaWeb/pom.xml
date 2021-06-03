@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>webdemo</module>
+        <module>webDemo</module>
         <module>demo01</module>
         <module>demo02</module>
+        <module>Day0603</module>
     </modules>
 
 

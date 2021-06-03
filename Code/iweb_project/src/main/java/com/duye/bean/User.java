@@ -37,4 +37,13 @@ public class User {
     public void setUpwd(String upwd) {
         this.upwd = upwd;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", uname='" + uname + '\'' +
+                ", upwd='" + upwd + '\'' +
+                '}';
+    }
 }

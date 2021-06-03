@@ -5,15 +5,17 @@ public class Order {
     private Integer uid;
     private Integer gid;
     private Integer count;
+    private Integer status;
 
     public Order() {
     }
 
-    public Order(Integer oid, Integer uid, Integer gid, Integer count) {
+    public Order(Integer oid, Integer uid, Integer gid, Integer count, Integer status) {
         this.oid = oid;
         this.uid = uid;
         this.gid = gid;
         this.count = count;
+        this.status = status;
     }
 
     public Integer getOid() {
@@ -28,7 +30,7 @@ public class Order {
         return uid;
     }
 
-    public void     setUid(Integer uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
     }
 
@@ -46,5 +48,24 @@ public class Order {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "oid=" + oid +
+                ", uid=" + uid +
+                ", gid=" + gid +
+                ", count=" + count +
+                ", status=" + status +
+                '}';
     }
 }

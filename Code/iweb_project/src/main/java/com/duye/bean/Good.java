@@ -37,4 +37,5 @@ public class Good {
     public void setGprice(Double gprice) {
         this.gprice = gprice;
     }
+
 }

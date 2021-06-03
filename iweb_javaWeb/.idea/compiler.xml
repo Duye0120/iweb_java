@@ -8,7 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo02" />
         <module name="demo01" />
-        <module name="webdemo" />
+        <module name="Day0603" />
+        <module name="webDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

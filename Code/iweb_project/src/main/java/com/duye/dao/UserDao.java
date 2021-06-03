@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserDao {
-    public User SelectUserByName(String uname){
+    public User selectUserByName(String uname){
         User user = null;
         DBUtil dbUtil = new DBUtil();
         try {
