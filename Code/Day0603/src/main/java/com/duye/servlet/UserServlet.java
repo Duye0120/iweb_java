@@ -1,5 +1,6 @@
 package com.duye.servlet;
 
+import com.alibaba.fastjson.JSON;
 import com.duye.Dao.UserDao;
 import com.duye.bean.User;
 
@@ -10,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import static java.awt.SystemColor.info;
 
 /**
  * 1. 验证登录 http://localhost:8080/user/login post user=admin pwd = admin
@@ -33,13 +34,38 @@ public class UserServlet extends HttpServlet {
 
     }
 
-    private void addr(HttpServletRequest req, HttpServletResponse resp) {
+    private void addr(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession();
+        Object userId = session.getAttribute("userId");
+        int id = Integer.parseInt(userId.toString());
+        String addr = req.getParameter("addr");
+        UserDao userDao = new UserDao();
+        userDao.updateAddr(id, addr);
+        req.getRequestDispatcher("/info.jsp").forward(req, resp);
     }
 
-    private void pwd(HttpServletRequest req, HttpServletResponse resp) {
+    private void pwd(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 获取当前登录用户
+        HttpSession session = req.getSession();
+        Object userId = session.getAttribute("userId");
+        int id = Integer.parseInt(userId.toString());
+        String pwd = req.getParameter("pwd");
+        UserDao userDao = new UserDao();
+        userDao.updatePwd(id, pwd);
+        req.getRequestDispatcher("/info.jsp").forward(req, resp);
     }
 
-    private void info(HttpServletRequest req, HttpServletResponse resp) {
+    private void info(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        // 获取当前登录用户
+        HttpSession session = req.getSession();
+        Object userId = session.getAttribute("userId");
+        int id = Integer.parseInt(userId.toString());
+        UserDao userDao = new UserDao();
+        User user = userDao.selectById(id);
+        PrintWriter writer = resp.getWriter();
+        writer.println(JSON.toJSON(user));
+        writer.flush();
+        writer.close();
     }
 
     private void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -61,7 +87,6 @@ public class UserServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
         session.setAttribute("userId", name.getId());
-
         req.getRequestDispatcher("/info.jsp").forward(req, resp);
 
     }
