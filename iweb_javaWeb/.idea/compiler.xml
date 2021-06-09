@@ -10,6 +10,7 @@
         <module name="demo01" />
         <module name="Day0603" />
         <module name="webDemo" />
+        <module name="webdemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

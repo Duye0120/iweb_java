@@ -25,60 +25,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c30a5db3-589b-4cd3-bdea-90a0dfdf92dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Day0603/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day0603/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven/src/main/java/com/duye/servlet/TextDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven/src/main/resources/test.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../maven/src/main/resources/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../smbms/smbms.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/libraries/hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/libraries/junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/libraries/mysql_connector_java_5_1_39_bin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/libraries/mysql_connector_java_5_1_39_bin1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/bean/Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/bean/Good.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/bean/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/bean/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/dao/GoodDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/dao/GoodDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/servlet/GoodServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/servlet/GoodServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/servlet/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/servlet/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/servlet/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/src/main/java/com/duye/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/target/classes/com/duye/bean/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/target/classes/com/duye/bean/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Code/iweb_project/target/classes/com/duye/bean/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/iweb_project/target/classes/com/duye/bean/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Note/iWEB.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/iWEB.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Note/白皮书.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Note/白皮书.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Teacher/压缩包/WEB06code.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Teacher/压缩包/j2ee01.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Teacher/压缩包/j2ee02笔记.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Teacher/压缩包/j2ee02练习.rar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo01/target/classes/com/duye/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo01/target/classes/com/duye/servlet/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/src/main/java/com/duye/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/src/main/java/com/duye/servlet/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/src/main/webapp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/src/main/webapp/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/src/test/java/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/classes/com/duye/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/classes/com/duye/servlet/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/test-classes/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/test-classes/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/webdemo/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/webdemo/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/webdemo/WEB-INF/classes/com/duye/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/webdemo/WEB-INF/classes/com/duye/servlet/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/webdemo/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/webdemo/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/webdemo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/webdemo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/webdemo/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/webdemo/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdemo/target/webdemo/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/webDemo/target/webdemo/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +59,7 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\Java\mavenPackage" />
         <option name="mavenHome" value="$PROJECT_DIR$/../environment/apache-maven-3.6.1" />
-        <option name="userSettingsFile" value="D:\A_Java\iweb_java\environment\apache-maven-3.6.1\conf\settings.xml" />
+        <option name="userSettingsFile" value="F:\A_iweb\iweb_java\environment\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -131,8 +81,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Day0603" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -394,6 +344,7 @@
       <workItem from="1622441865443" duration="582000" />
       <workItem from="1622680706846" duration="2299000" />
       <workItem from="1622708346244" duration="1109000" />
+      <workItem from="1622730497270" duration="159000" />
     </task>
     <servers />
   </component>
@@ -430,11 +381,11 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="525" y="165" key="#com.intellij.ide.util.MemberChooser/0.0.1440.920@0.0.1440.920" timestamp="1622103372840" />
-    <state x="500" y="214" key="FileChooserDialogImpl" timestamp="1622709459829">
-      <screen x="0" y="0" width="1440" height="920" />
+    <state x="667" y="242" key="FileChooserDialogImpl" timestamp="1622730658313">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="500" y="214" key="FileChooserDialogImpl/0.0.1440.920@0.0.1440.920" timestamp="1622709459829" />
-    <state x="667" y="242" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622112425633" />
+    <state x="667" y="242" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1622730658313" />
     <state width="955" height="242" key="GridCell.Tab.0.bottom" timestamp="1622709464081">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
@@ -487,11 +438,11 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="366" y="163" key="NewModule_or_Project.wizard/0.0.1440.920@0.0.1440.920" timestamp="1622172432603" />
-    <state x="221" y="67" key="SettingsEditor" timestamp="1622709143564">
-      <screen x="0" y="0" width="1440" height="920" />
+    <state x="295" y="118" key="SettingsEditor" timestamp="1622730579159">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="221" y="67" key="SettingsEditor/0.0.1440.920@0.0.1440.920" timestamp="1622709143564" />
-    <state x="295" y="118" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622112430212" />
+    <state x="295" y="118" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1622730579159" />
     <state x="312" y="192" key="Vcs.Push.Dialog.v2" timestamp="1622082170684">
       <screen x="0" y="0" width="1440" height="920" />
     </state>
